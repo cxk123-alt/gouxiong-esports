@@ -1,0 +1,14 @@
+{
+  "name": "xiongda-esports",
+  "version": "1.0.0",
+  "private": true,
+  "description": "狗熊电竞 · 三角洲陪玩下单平台（注册 / 登录 / 下单）",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/api.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
