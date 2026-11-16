@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07080b">
+  <meta name="description" content="狗熊电竞 · 三角洲陪玩下单平台。五位王牌业务人员，四门绝活业务能力，注册账号与密码后即可下单。">
+  <title>狗熊电竞 · 三角洲陪玩下单</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body data-view="auth">
+
+  <!-- 共享图形定义 -->
+  <svg class="svg-defs" aria-hidden="true" focusable="false" width="0" height="0">
+    <defs>
+      <linearGradient id="furGrad" x1="82" y1="76" x2="258" y2="286" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#ffc078"></stop>
+        <stop offset="1" stop-color="#ff6a00"></stop>
+      </linearGradient>
+      <linearGradient id="bandGrad" x1="80" y1="90" x2="270" y2="190" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#4b556b"></stop>
+        <stop offset="1" stop-color="#1b202c"></stop>
+      </linearGradient>
+    </defs>
+
+    <symbol id="logo-bear" viewBox="0 0 48 48">
+      <circle cx="13" cy="14" r="6.4" fill="currentColor"></circle>
+      <circle cx="35" cy="14" r="6.4" fill="currentColor"></circle>
+      <circle cx="24" cy="26" r="15" fill="currentColor"></circle>
+      <ellipse cx="24" cy="30.6" rx="7.6" ry="5.6" fill="#1a0d02" opacity=".2"></ellipse>
+      <circle cx="18.5" cy="24" r="2.1" fill="#1a0d02"></circle>
+      <circle cx="29.5" cy="24" r="2.1" fill="#1a0d02"></circle>
+      <ellipse cx="24" cy="29.8" rx="2.6" ry="2" fill="#1a0d02"></ellipse>
+    </symbol>
+
+    <symbol id="mascot" viewBox="0 0 340 340">
+      <ellipse cx="170" cy="318" rx="96" ry="14" fill="#000000" opacity=".3"></ellipse>
+      <circle cx="104" cy="112" r="34" fill="url(#furGrad)"></circle>
+      <circle cx="236" cy="112" r="34" fill="url(#furGrad)"></circle>
+      <circle cx="104" cy="112" r="18" fill="#ffd9b5" opacity=".5"></circle>
+      <circle cx="236" cy="112" r="18" fill="#ffd9b5" opacity=".5"></circle>
+      <circle cx="170" cy="182" r="88" fill="url(#furGrad)"></circle>
+      <ellipse cx="132" cy="140" rx="34" ry="22" fill="#ffffff" opacity=".12" transform="rotate(-24 132 140)"></ellipse>
+      <ellipse cx="170" cy="214" rx="46" ry="34" fill="#ffe3c7"></ellipse>
+      <ellipse cx="170" cy="201" rx="15" ry="11" fill="#241305"></ellipse>
+      <path d="M170 212v8" stroke="#241305" stroke-width="5" stroke-linecap="round"></path>
+      <path d="M156 224q14 12 28 0" stroke="#241305" stroke-width="5" stroke-linecap="round" fill="none"></path>
+      <circle cx="138" cy="172" r="9" fill="#1a1206"></circle>
+      <circle cx="202" cy="172" r="9" fill="#1a1206"></circle>
+      <circle cx="141" cy="169" r="3" fill="#ffffff" opacity=".9"></circle>
+      <circle cx="205" cy="169" r="3" fill="#ffffff" opacity=".9"></circle>
+      <path d="M92 166C92 108 126 82 170 82s78 26 78 84" stroke="url(#bandGrad)" stroke-width="20" stroke-linecap="round" fill="none"></path>
+      <path d="M92 166C92 108 126 82 170 82s78 26 78 84" stroke="#ff9a3c" stroke-width="3" stroke-linecap="round" fill="none" opacity=".5"></path>
+      <rect x="54" y="148" width="44" height="80" rx="22" fill="url(#bandGrad)" stroke="#0b0d12" stroke-width="2"></rect>
+      <rect x="242" y="148" width="44" height="80" rx="22" fill="url(#bandGrad)" stroke="#0b0d12" stroke-width="2"></rect>
+      <circle cx="76" cy="188" r="8" fill="#ff7a18"></circle>
+      <circle cx="264" cy="188" r="8" fill="#ff7a18"></circle>
+      <path d="M266 224c0 28-24 44-48 42" stroke="#454f66" stroke-width="8" stroke-linecap="round" fill="none"></path>
+      <rect x="198" y="254" width="28" height="14" rx="7" fill="#ff9a3c"></rect>
+    </symbol>
+  </svg>
+
+  <!-- ===================== 未登录：注册 / 登录 ===================== -->
+  <div class="auth" id="view-auth">
+    <section class="auth-art">
+      <div class="auth-art-inner">
+        <a class="brand" href="/" aria-label="狗熊电竞首页">
+          <span class="logo-mark">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-bear"></use></svg>
+          </span>
+          <span class="brand-text">
+            <strong>狗熊电竞</strong>
+            <small>GOUXIONG ESPORTS</small>
+          </span>
+        </a>
+
+        <div class="auth-copy">
+          <span class="pill"><span class="dot"></span>全服在线 · 24 小时接单</span>
+          <h1>狗熊坐镇<br><span class="text-grad">三角洲横着走</span></h1>
+          <p>五位王牌业务人员，四门绝活业务能力。<br>注册账号与密码，随时开单，撤离不用慌。</p>
+          <div class="auth-social">
+            <div class="auth-avatars" aria-hidden="true">
+              <span data-id="xiongda">熊</span>
+              <span data-id="gouxiong">狗</span>
+              <span data-id="benben">笨</span>
+              <span data-id="tiezhang">铁</span>
+              <span data-id="tangren">唐</span>
+            </div>
+            <p><strong>2,481</strong> 名玩家已完成注册</p>
+          </div>
+        </div>
+
+        <div class="auth-mascot" aria-hidden="true">
+          <svg viewBox="0 0 340 340"><use href="#mascot"></use></svg>
+        </div>
+
+        <p class="auth-legal">© 2026 狗熊电竞 · 演示站点 · 请勿用于真实交易</p>
+      </div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-card">
+        <div class="auth-card-brand">
+          <span class="logo-mark logo-mark-sm">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-bear"></use></svg>
+          </span>
+          <span>狗熊电竞</span>
+        </div>
+
+        <h2 id="auth-title">欢迎回来</h2>
+        <p class="auth-sub" id="auth-sub">登录后即可下单，王牌队员随时待命</p>
+
+        <div class="tabs" role="tablist" aria-label="登录或注册">
+          <button class="tab is-active" id="tab-login" type="button" role="tab" aria-selected="true"
+                  aria-controls="form-login" data-auth-tab="login">登录</button>
+          <button class="tab" id="tab-register" type="button" role="tab" aria-selected="false"
+                  aria-controls="form-register" data-auth-tab="register">注册</button>
+        </div>
+
+        <div class="auth-alert" id="auth-alert" role="alert" hidden></div>
+
+        <form class="auth-form" id="form-login" novalidate>
+          <div class="field">
+            <label class="label" for="login-account">账号</label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="4"></circle>
+                <path d="M4.5 20a7.5 7.5 0 0 1 15 0"></path>
+              </svg>
+              <input id="login-account" name="account" type="text" autocomplete="username"
+                     placeholder="请输入已注册的账号" maxlength="16" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label" for="login-password">密码</label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="10" width="16" height="10" rx="2.5"></rect>
+                <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+              </svg>
+              <input id="login-password" name="password" type="password" autocomplete="current-password"
+                     placeholder="请输入密码" maxlength="64" required>
+              <button class="pwd-toggle" type="button" data-target="login-password" aria-label="显示密码" title="显示密码">
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"></path>
+                  <circle cx="12" cy="12" r="3.2"></circle>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-block" type="submit" data-label="登录">登录</button>
+
+          <p class="auth-switch">还没有账号？<button type="button" data-auth-tab="register">先注册账号和密码</button></p>
+        </form>
+
+        <form class="auth-form" id="form-register" novalidate hidden>
+          <div class="field">
+            <label class="label" for="reg-account">账号</label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="4"></circle>
+                <path d="M4.5 20a7.5 7.5 0 0 1 15 0"></path>
+              </svg>
+              <input id="reg-account" name="account" type="text" autocomplete="username"
+                     placeholder="3-16 位字母、数字、下划线或中文" maxlength="16" required>
+            </div>
+            <p class="field-hint">账号将作为你的登录凭证，注册后不可修改。</p>
+          </div>
+
+          <div class="field">
+            <label class="label" for="reg-password">密码</label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="10" width="16" height="10" rx="2.5"></rect>
+                <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+              </svg>
+              <input id="reg-password" name="password" type="password" autocomplete="new-password"
+                     placeholder="至少 6 位" maxlength="64" required>
+              <button class="pwd-toggle" type="button" data-target="reg-password" aria-label="显示密码" title="显示密码">
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"></path>
+                  <circle cx="12" cy="12" r="3.2"></circle>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label" for="reg-confirm">确认密码</label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m5 12.5 4.5 4.5L19 7.5"></path>
+              </svg>
+              <input id="reg-confirm" name="confirm" type="password" autocomplete="new-password"
+                     placeholder="请再次输入密码" maxlength="64" required>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-block" type="submit" data-label="注册并登录">注册并登录</button>
+
+          <p class="auth-switch">已有账号？<button type="button" data-auth-tab="login">直接登录</button></p>
+        </form>
+      </div>
+
+      <p class="auth-panel-foot">登录即表示同意《用户协议》与《隐私政策》（演示文案）</p>
+    </section>
+  </div>
+
+  <!-- ===================== 已登录：工作台 ===================== -->
+  <div class="app" id="view-app" hidden>
+    <aside class="sidebar">
+      <a class="brand" href="#hall" aria-label="狗熊电竞下单大厅">
+        <span class="logo-mark">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><use href="#logo-bear"></use></svg>
+        </span>
+        <span class="brand-text">
+          <strong>狗熊电竞</strong>
+          <small>GOUXIONG ESPORTS</small>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="nav-item is-active" href="#hall">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3.5" y="3.5" width="7" height="7" rx="2"></rect>
+            <rect x="13.5" y="3.5" width="7" height="7" rx="2"></rect>
+            <rect x="3.5" y="13.5" width="7" height="7" rx="2"></rect>
+            <rect x="13.5" y="13.5" width="7" height="7" rx="2"></rect>
+          </svg>
+          下单大厅
+        </a>
+        <a class="nav-item" href="#my-orders">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3Z"></path>
+            <path d="M9 8h6M9 12h6"></path>
+          </svg>
+          我的订单
+          <span class="nav-badge" id="nav-order-count" hidden>0</span>
+        </a>
+        <a class="nav-item" href="#guarantee">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l7.5 3v6c0 4.2-3.1 7.6-7.5 9-4.4-1.4-7.5-4.8-7.5-9V6L12 3Z"></path>
+            <path d="m9 12 2.2 2.2L15.5 10"></path>
+          </svg>
+          服务保障
+        </a>
+      </nav>
+
+      <div class="side-note">
+        <span class="side-note-title">下单流程</span>
+        <ol class="side-steps">
+          <li><span>1</span>选业务人员</li>
+          <li><span>2</span>选业务能力</li>
+          <li><span>3</span>确认局数并提交</li>
+        </ol>
+      </div>
+
+      <div class="side-user">
+        <span class="avatar avatar-sm" id="side-avatar" aria-hidden="true">玩</span>
+        <div class="side-user-info">
+          <strong id="side-account">—</strong>
+          <small>普通会员</small>
+        </div>
+        <button class="icon-btn" id="logout-btn" type="button" title="退出登录" aria-label="退出登录">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 4h3.5A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5H15"></path>
+            <path d="M10 8l-4 4 4 4M6 12h10"></path>
+          </svg>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main" id="hall">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">工作台 / 下单大厅</p>
+          <h2 id="greeting">你好，玩家</h2>
+        </div>
+        <div class="topbar-right">
+          <span class="status"><span class="dot"></span>客服在线</span>
+          <button class="icon-btn mobile-logout" id="logout-btn-mobile" type="button" title="退出登录" aria-label="退出登录">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 4h3.5A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5H15"></path>
+              <path d="M10 8l-4 4 4 4M6 12h10"></path>
+            </svg>
+          </button>
+          <button class="btn btn-ghost btn-sm" id="help-btn" type="button">下单帮助</button>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="pill"><span class="dot"></span>全服在线 · 24 小时接单</span>
+          <h1>狗熊坐镇<br><span class="text-grad">三角洲横着走</span></h1>
+          <p>五位王牌，四门绝活。选人、选活、下单，剩下的交给狗熊。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#staff-panel">立即下单</a>
+            <a class="btn btn-ghost" href="#my-orders">查看我的订单</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>5</strong><span>王牌业务人员</span></div>
+            <div><strong>4</strong><span>绝活业务能力</span></div>
+            <div><strong>91%</strong><span>平均撤离率</span></div>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <span class="hero-glow"></span>
+          <svg class="mascot" viewBox="0 0 340 340"><use href="#mascot"></use></svg>
+          <div class="hero-badge hero-badge-a">
+            <strong>MVP</strong>
+            <span>连拿三局</span>
+          </div>
+          <div class="hero-badge hero-badge-b">
+            <strong>92%</strong>
+            <span>撤离率</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="order-layout">
+        <div class="order-main">
+          <section class="panel" id="staff-panel" aria-labelledby="staff-title">
+            <div class="panel-head">
+              <div>
+                <span class="step">STEP 01</span>
+                <h3 id="staff-title">选择业务人员</h3>
+                <p>五位王牌各有绝活，按需点单。</p>
+              </div>
+              <span class="panel-tip">单选</span>
+            </div>
+            <div class="staff-list" id="staff-grid" role="radiogroup" aria-label="选择业务人员"></div>
+          </section>
+
+          <section class="panel" id="service-panel" aria-labelledby="service-title">
+            <div class="panel-head">
+              <div>
+                <span class="step">STEP 02</span>
+                <h3 id="service-title">选择业务能力</h3>
+                <p>四门绝活，覆盖堵桥、残局、捡漏与守闸。</p>
+              </div>
+              <span class="panel-tip">单选</span>
+            </div>
+            <div class="service-grid" id="service-grid" role="radiogroup" aria-label="选择业务能力"></div>
+          </section>
+
+          <section class="panel" id="settings-panel" aria-labelledby="settings-title">
+            <div class="panel-head">
+              <div>
+                <span class="step">STEP 03</span>
+                <h3 id="settings-title">对局设置</h3>
+                <p>选择局数，补充集合时间与备注。</p>
+              </div>
+              <span class="panel-tip">1-5 局</span>
+            </div>
+
+            <div class="settings-row">
+              <div class="field rounds-field">
+                <span class="label" id="rounds-label">局数</span>
+                <div class="stepper" role="group" aria-labelledby="rounds-label">
+                  <button class="stepper-btn" type="button" data-step="-1" aria-label="减少局数">−</button>
+                  <input class="stepper-value" id="rounds" type="number" inputmode="numeric"
+                         min="1" max="5" step="1" value="1" aria-label="局数">
+                  <button class="stepper-btn" type="button" data-step="1" aria-label="增加局数">+</button>
+                </div>
+              </div>
+
+              <div class="field field-grow">
+                <label class="label" for="note">备注 <span class="label-extra" id="note-count">0/100</span></label>
+                <textarea id="note" name="note" rows="3" maxlength="100"
+                          placeholder="例：今晚 8 点，零号大坝，需要开麦指挥，物资都归我"></textarea>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <aside class="order-side">
+          <div class="summary panel" aria-label="订单摘要">
+            <div class="summary-head">
+              <span class="eyebrow">订单摘要</span>
+              <span class="summary-no">XD / ORDER</span>
+            </div>
+
+            <div class="sum-pick">
+              <span class="staff-avatar sum-avatar" id="sum-avatar" aria-hidden="true">熊</span>
+              <div class="sum-pick-info">
+                <strong id="sum-name">—</strong>
+                <span id="sum-service-tag">—</span>
+              </div>
+            </div>
+
+            <dl class="sum-rows">
+              <div><dt>业务人员</dt><dd id="sum-staff">—</dd></div>
+              <div><dt>业务能力</dt><dd id="sum-service">—</dd></div>
+              <div><dt>局数</dt><dd id="sum-rounds">1 局</dd></div>
+              <div><dt>人员单价</dt><dd id="sum-staff-price">¥0 / 局</dd></div>
+              <div><dt>项目单价</dt><dd id="sum-service-price">¥0 / 局</dd></div>
+            </dl>
+
+            <div class="sum-total">
+              <span>合计</span>
+              <strong id="sum-total">¥0</strong>
+            </div>
+
+            <button class="btn btn-primary btn-block" id="submit-order" type="button" disabled>立即下单</button>
+            <p class="sum-note">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="10" width="14" height="10" rx="2.5"></rect>
+                <path d="M8.5 10V7a3.5 3.5 0 0 1 7 0v3"></path>
+              </svg>
+              订单仅自己可见 · 未开局可随时取消
+            </p>
+          </div>
+        </aside>
+      </div>
+
+      <section class="orders" id="my-orders" aria-labelledby="orders-title">
+        <div class="section-head">
+          <div>
+            <span class="step">ORDERS</span>
+            <h3 id="orders-title">我的订单</h3>
+          </div>
+          <span class="muted" id="orders-meta">共 0 单</span>
+        </div>
+        <div class="orders-list" id="orders-list" aria-live="polite"></div>
+      </section>
+
+      <section class="guarantee" id="guarantee" aria-labelledby="guarantee-title">
+        <div class="section-head">
+          <div>
+            <span class="step">SERVICE</span>
+            <h3 id="guarantee-title">服务保障</h3>
+          </div>
+          <span class="muted">每一单都按流程走</span>
+        </div>
+        <div class="guarantee-grid">
+          <article class="g-card">
+            <span class="g-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3l7.5 3v6c0 4.2-3.1 7.6-7.5 9-4.4-1.4-7.5-4.8-7.5-9V6L12 3Z"></path>
+                <path d="m9 12 2.2 2.2L15.5 10"></path>
+              </svg>
+            </span>
+            <h4>实名认证</h4>
+            <p>所有业务人员均通过实名与设备认证，账号唯一。</p>
+          </article>
+          <article class="g-card">
+            <span class="g-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5Z"></path>
+              </svg>
+            </span>
+            <h4>极速接单</h4>
+            <p>提交订单后 5 分钟内接单，开局前可随时取消。</p>
+          </article>
+          <article class="g-card">
+            <span class="g-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 12a8 8 0 0 1 13.7-5.7L20 8.5"></path>
+                <path d="M20 4v4.5h-4.5"></path>
+                <path d="M20 12a8 8 0 0 1-13.7 5.7L4 15.5"></path>
+                <path d="M4 20v-4.5h4.5"></path>
+              </svg>
+            </span>
+            <h4>失败包赔</h4>
+            <p>按约定未完成目标，补一局或原路退回费用。</p>
+          </article>
+          <article class="g-card">
+            <span class="g-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="10" width="16" height="10" rx="2.5"></rect>
+                <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+                <path d="M12 14v2"></path>
+              </svg>
+            </span>
+            <h4>隐私保护</h4>
+            <p>密码加盐加密存储，订单信息仅本人可见。</p>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>© 2026 狗熊电竞 · 本页面为演示项目，业务人员与业务能力均为虚构</p>
+        <p class="footer-dim">理性消费 · 适度游戏 · 未成年人请在监护人陪同下使用</p>
+      </footer>
+    </main>
+
+    <div class="checkout-bar" id="checkout-bar">
+      <div class="checkout-total">
+        <span>合计</span>
+        <strong id="bar-total">¥0</strong>
+      </div>
+      <button class="btn btn-primary" id="bar-submit" type="button" disabled>立即下单</button>
+    </div>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite" aria-atomic="false"></div>
+
+  <noscript>
+    <p style="padding:24px;text-align:center">请启用 JavaScript 以使用狗熊电竞。</p>
+  </noscript>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
