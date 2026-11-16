@@ -1,0 +1,24 @@
+# Render Blueprint
+# 用法：把整个目录推到 GitHub/GitLab，然后在 Render 控制台 New → Blueprint 选择该仓库。
+services:
+  - type: web
+    name: gouxiong-esports
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: TRUST_PROXY
+        value: "1"
+    # 免费实例的文件系统是临时的，重新部署/重启会清空 data/db.json。
+    # 需要长期保留账号与订单时：升级到 starter，取消下面注释，并在 envVars 增加
+    # XD_DATA_DIR=/var/data。
+    # disk:
+    #   name: gouxiong-data
+    #   mountPath: /var/data
+    #   sizeGB: 1
